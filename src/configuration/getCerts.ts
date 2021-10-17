@@ -3,7 +3,7 @@
 // ---Dependencies
 import fs from 'fs';
 // ---Other
-import { Certs } from './customTypes';
+import { Certs } from '#Config/customTypes';
 
 const sslPath: string | null = process.env.SSL_PATH || null;
 

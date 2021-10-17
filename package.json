@@ -12,6 +12,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "imports": {
+    "#Config/*": "./src/configuration/*.ts",
+    "#Routes/*": "./src/routes/*.ts",
+    "#DataModel/*": "./src/data-model/*.ts"
+  },
   "devDependencies": {
     "@types/config": "0.0.39",
     "@types/cors": "^2.8.12",

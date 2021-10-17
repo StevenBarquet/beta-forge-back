@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
 // --------------------------------------IMPORTS------------------------------------
-// ---Dependencies
-import { AxiosResponse, AxiosError } from 'axios';
 
 // --------------------------------------CONFIGURATION------------------------------------
 // ---getCerts
@@ -14,7 +11,7 @@ interface EmptyObj { [n: string]: never }
 
 export type Certs = WithFilesCerts | EmptyObj
 
-// -------------------------------------------Respond Services----------------------------------------
+// -----------------------------------------Respond Services--------------------------------------
 interface Result {
   error?: any;
   errorType?: string;
@@ -28,14 +25,6 @@ export interface CallbackResponse {
 }
 
 export type Callback = (params?: any) => Promise<CallbackResponse>;
-
-// -------------------------------------------endToEndReq----------------------------------------
-export interface ResponseStandar {
-  internalError: boolean;
-  response?: AxiosResponse<any>;
-  error?: AxiosError<any>;
-}
-export type RouteAsyncMethod = () => Promise<ResponseStandar>
 
 // -------------------------------------------Validations----------------------------------------
 

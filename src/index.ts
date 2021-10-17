@@ -9,9 +9,9 @@ import cors from 'cors';
 // import oneJokeRoute from './routes/oneJoke'
 // import listOfjokesRoute from './routes/listOfjokes'
 // ---Others
-import getCerts from './configuration/getCerts';
-import startLogs from './configuration/startLogs';
-import mongoConnect from './configuration/mongoConfig';
+import getCerts from '#Config/getCerts';
+import startLogs from '#Config/startLogs';
+import mongoConnect from '#Config/mongoConfig';
 
 // -----------------------------------CONFIG-------------------------------
 debugProd('app:prod');

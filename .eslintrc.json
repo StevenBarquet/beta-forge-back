@@ -20,6 +20,10 @@
             }
     },
     "rules": {
-        "import/extensions": [ "error", "ignorePackages", { "js": "never", "ts": "never" }]
+        // Javascript
+        "no-unused-vars": 0,
+        // Typescript
+        "import/extensions": [ "error", "ignorePackages", { "ts": "never" }],
+        "@typescript-eslint/no-unused-vars": [1, { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }]
     }
 }
