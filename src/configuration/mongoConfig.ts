@@ -2,10 +2,9 @@
 // Dependencies
 import config from 'config';
 import mongoose from 'mongoose';
-import debugProd from 'debug';
 
 // -----------------------------------CONFIG-------------------------------
-debugProd('app:prod');
+const debugProd = require('debug')('app:prod');
 
 // -------------------------------------MODULE---------------------------------
 async function mongoConnect(): Promise<void> {

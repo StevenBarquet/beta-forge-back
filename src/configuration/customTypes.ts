@@ -1,4 +1,6 @@
 // --------------------------------------IMPORTS------------------------------------
+// Dependencies
+import { ValidationResult } from 'joi';
 
 // --------------------------------------CONFIGURATION------------------------------------
 // ---getCerts
@@ -27,19 +29,4 @@ export interface CallbackResponse {
 export type Callback = (params?: any) => Promise<CallbackResponse>;
 
 // -------------------------------------------Validations----------------------------------------
-
-export interface WordsReqData {
-  pageNumber: number;
-  pageSize: number;
-  searchedString: string;
-  mail?: string;
-}
-
-interface AnyArray {
-  [index: number]: unknown;
-}
-export interface DBSearchModel {
-  searchedString: string;
-  result: AnyArray;
-  total: number;
-}
+export type Validator = (data: unknown) => ValidationResult;

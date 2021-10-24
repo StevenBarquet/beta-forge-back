@@ -1,12 +1,11 @@
 // --------------------------------------IMPORTS------------------------------------
 // ---Dependencies
 import express from 'express';
-import debugProd from 'debug';
 // ---Middlewares
 import helmet from 'helmet';
 import cors from 'cors';
 // ---Routes
-// import oneJokeRoute from './routes/oneJoke'
+import recActivosAdminRoute from '#Routes/recActivosAdmin';
 // import listOfjokesRoute from './routes/listOfjokes'
 // ---Others
 import getCerts from '#Config/getCerts';
@@ -14,7 +13,8 @@ import startLogs from '#Config/startLogs';
 import mongoConnect from '#Config/mongoConfig';
 
 // -----------------------------------CONFIG-------------------------------
-debugProd('app:prod');
+const debugProd = require('debug')('app:prod');
+
 const app = express();
 const enviroment = process.env.NODE_ENV || 'development';
 const port = process.env.PORT || 4000;
@@ -29,8 +29,7 @@ app.use(cors()); // For security
 mongoConnect();
 
 // -----------------------------------ROUTES-------------------------------
-// app.use('/api/norris/v1.0.0/', oneJokeRoute)
-// app.use('/api/norris/v1.0.0/', listOfjokesRoute)
+app.use('/api/admin/recurrentes/', recActivosAdminRoute);
 
 // -----------------------------------SSL-------------------------------
 const http = require('http');
