@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 // ---Routes
 import recActivosAdminRoute from '#Routes/recActivosAdmin';
+import forgeUsersAdminRoute from '#Routes/forgeUsers';
 // import listOfjokesRoute from './routes/listOfjokes'
 // ---Others
 import getCerts from '#Config/getCerts';
@@ -30,6 +31,7 @@ mongoConnect();
 
 // -----------------------------------ROUTES-------------------------------
 app.use('/api/admin/recurrentes/', recActivosAdminRoute);
+app.use('/api/forgeUsers/', forgeUsersAdminRoute);
 
 // -----------------------------------SSL-------------------------------
 const http = require('http');

@@ -41,7 +41,15 @@ router.get('/:id', (req: Request, res: Response) => {
     responseService(res, getOneProduct, id);
   }
 });
+// ----- Delete One -------
+router.delete('/:id', (req: Request, res: Response) => {
+  debug(`request for: ${req.originalUrl}`);
 
+  const { id } = req.params;
+  if (checkParams(res, id, isId)) {
+    responseService(res, deleteOneProduct, id);
+  }
+});
 // --------------------------------- QUERYS AND METHODS --------------------------
 async function getOneProduct(id: string) {
   // Trae un producto de la base de datos
@@ -57,6 +65,23 @@ async function getOneProduct(id: string) {
     return {
       internalError: true,
       result: { ...error, errorType: 'Error al traer el producto de DB', statusError: 404 }
+    };
+  }
+}
+async function deleteOneProduct(id: string) {
+  // Trae un producto de la base de datos
+  try {
+    const someProduct = await RecActivos.deleteOne({ _id: id });
+    debug(`------deleteOneProduct-----\nsuccess\n${someProduct}`);
+    return {
+      internalError: false,
+      result: someProduct
+    };
+  } catch (error) {
+    debug(`------deleteOneProduct-----\nInternal error\n\n${error}`);
+    return {
+      internalError: true,
+      result: { ...error, errorType: 'Error al traer o borrar el producto de DB', statusError: 404 }
     };
   }
 }
