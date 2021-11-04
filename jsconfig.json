@@ -5,7 +5,8 @@
     "paths": {
       "#Config/*": ["./src/configuration/*"],
       "#Routes/*": ["./src/routes/*"],
-      "#DataModel/*": ["./src/data-model/*"]
+      "#DataModel/*": ["./src/data-model/*"],
+      "#Auth/*": ["./src/auth/*"]
     }
   }
 }

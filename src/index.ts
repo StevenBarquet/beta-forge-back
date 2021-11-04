@@ -4,10 +4,11 @@ import express from 'express';
 // ---Middlewares
 import helmet from 'helmet';
 import cors from 'cors';
+import usersAuth from '#Auth/usersAuthMidleware';
 // ---Routes
 import recActivosAdminRoute from '#Routes/recActivosAdmin';
 import forgeUsersAdminRoute from '#Routes/forgeUsers';
-// import listOfjokesRoute from './routes/listOfjokes'
+import usersAutenticationRoute from '#Auth/usersAuth';
 // ---Others
 import getCerts from '#Config/getCerts';
 import startLogs from '#Config/startLogs';
@@ -31,7 +32,8 @@ mongoConnect();
 
 // -----------------------------------ROUTES-------------------------------
 app.use('/api/admin/recurrentes/', recActivosAdminRoute);
-app.use('/api/forgeUsers/', forgeUsersAdminRoute);
+app.use('/api/forgeUsers/', usersAuth, forgeUsersAdminRoute);
+app.use('/api/usersAutentication/', usersAutenticationRoute);
 
 // -----------------------------------SSL-------------------------------
 const http = require('http');

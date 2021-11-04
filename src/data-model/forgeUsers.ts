@@ -41,6 +41,15 @@ export function validateForgeUserWithID(data: unknown): Joi.ValidationResult {
   });
   return schema.validate(data);
 }
+export function validateLogin(data: unknown): Joi.ValidationResult {
+  const schema = Joi.object({
+    mail: Joi.string()
+      .min(3)
+      .email({ tlds: { allow: false } }).required(),
+    pass: Joi.string().min(6).required()
+  });
+  return schema.validate(data);
+}
 // ----------------------------- TS TYPE ---------------------------
 export interface ForgeUsersType {
   _id?: string;

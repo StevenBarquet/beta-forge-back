@@ -22,6 +22,7 @@
     "rules": {
         // Javascript
         "no-unused-vars": "off",
+        "no-plusplus":"off",
         "no-underscore-dangle":"off",
         "comma-dangle": ["warn", "never"],
         "no-use-before-define": ["error", { "functions": false, "classes": true, "variables": true }],        // Typescript

@@ -14,14 +14,20 @@ interface EmptyObj { [n: string]: never }
 export type Certs = WithFilesCerts | EmptyObj
 
 // -----------------------------------------Respond Services--------------------------------------
+interface TokenData {
+  _id: string;
+  nombre: string;
+  mail: string;
+}
 interface Result {
   error?: any;
   errorType?: string;
   statusError?: number;
   responseData?: any;
+  tokenData?: TokenData;
 }
 
-export interface CallbackResponse {
+export type CallbackResponse = {
   internalError: boolean;
   result: Result;
 }

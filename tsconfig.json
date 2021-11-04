@@ -65,7 +65,8 @@
     "paths": {
       "#Config/*": ["./src/configuration/*"],
       "#Routes/*": ["./src/routes/*"],
-      "#DataModel/*": ["./src/data-model/*"]
+      "#DataModel/*": ["./src/data-model/*"],
+      "#Auth/*": ["./src/auth/*"]
     },
     /* Source Map Options */
     // "sourceRoot": "",                            /* Specify the location where debugger should locate TypeScript files instead of source locations. */
