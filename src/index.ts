@@ -31,8 +31,8 @@ app.use(cors()); // For security
 mongoConnect();
 
 // -----------------------------------ROUTES-------------------------------
-app.use('/api/admin/recurrentes/', recActivosAdminRoute);
-app.use('/api/forgeUsers/', usersAuth, forgeUsersAdminRoute);
+app.use('/api/admin/recurrentes/', usersAuth, recActivosAdminRoute);
+app.use('/api/forgeUsers/', forgeUsersAdminRoute);
 app.use('/api/usersAutentication/', usersAutenticationRoute);
 
 // -----------------------------------SSL-------------------------------
